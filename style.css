@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.rep {
+    padding: 10px;
+    margin: 5px;
+    width: 300px; /* Fixer la largeur de l'input */
+    position: relative; /* Nécessaire pour aligner les suggestions */
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    width: 100px;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#suggestions {
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 300px; /* Correspond à la largeur de l'input */
+    text-align: left;
+    margin-top: 5px; /* Espace entre l'input et les suggestions */
+    z-index: 1;
+    left: calc(50% - 55px);
+    transform: translateX(-50%);
+    top: calc(50px + 50px); /* Ajuster la position pour l'aligner avec l'input */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour le style */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee; /* Ligne de séparation entre les suggestions */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Autres styles inchangés */
+.answers-container {
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: calc(100% / 7); /* Ajustement pour 7 colonnes */
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.square-image {
+    max-width: 100px;
+    max-height: 80px;
+}
+
+.square-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.correct {
+    background-color: #4caf50 !important;
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336 !important;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styles pour le pop-up de victoire */
+.win-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+}
+
+.win-content {
+    position: relative;
+}
+
+.win-popup img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.win-popup button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.win-popup button:hover {
+    background-color: #45a049;
+}
+
+/* Styles pour les flèches */
+.arrow-icon {
+    width: 20px; /* Taille de la flèche */
+    height: 20px;
+    opacity: 0.5; /* Opacité à 50% */
+    margin-left: 5px; /* Espace entre la flèche et le texte */
+    vertical-align: middle; /* Aligne la flèche avec le texte */
+}
+
+/* Flèche vers le haut */
+.arrow-up {
+    content: url('images/fleche-haut.png');
+}
+
+/* Flèche vers le bas */
+.arrow-down {
+    content: url('images/fleche-bas.png');
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-cell {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0; /* Assurez-vous qu'elles sont invisibles au début */
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-image {
+    width: 30px; /* Taille de l'image */
+    height: 30px;
+    margin-right: 10px; /* Espace entre l'image et le nom */
+    border-radius: 5px; /* Coins arrondis */
+    object-fit: cover;
+}

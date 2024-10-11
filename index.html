@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNK Devine le Personnage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Devine le personnage de SNK</h1>
+    <input type="text" class="rep" id="guessInput" placeholder="Entre le nom d'un personnage" oninput="showSuggestions()">
+    <div id="suggestions"></div>
+    <button onclick="submitGuess()">Soumettre</button>
+    <div id="feedback"></div>
+
+    <!-- Pop-up de victoire -->
+<div id="winPopup" class="win-popup" style="display: none;">
+    <div class="win-content">
+        <span class="close" onclick="closeWinPopup()">&times;</span>
+        <h2>Bravo ! Tu as trouvé le personnage !</h2>
+        <img id="winImage" src="" alt="Personnage trouvé">
+        <p id="winStats"></p>
+        <button onclick="restartGame()">Rejouer</button>
+    </div>
+</div>
+
+
+    <div class="answers-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Personnage</th>
+                    <th>Âge</th>
+                    <th>Genre</th>
+                    <th>Statut</th>
+                    <th>Faction</th>
+                    <th>Première apparition</th>
+                    <th>Affiliation</th>
+                    <th>Titans tués</th> 
+                </tr>
+            </thead>
+            <tbody id="guessTableBody">
+                <!-- Les lignes des essais seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
